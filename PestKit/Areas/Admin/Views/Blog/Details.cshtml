@@ -1,0 +1,32 @@
+﻿@model Blog
+<div class="m-5">
+	<div class="container">
+		<h1>@Model.Name</h1>
+		<div class="d-flex">
+			<div class="mr-5">
+				<img width="200px" src="~/assets/img/@Model.ImageUrl">
+			</div>
+
+			<div >
+				<p>Name: @Model.Name</p>
+				<p>Author: @Model.Author.Name</p>
+				<div>
+					<h3>Tags</h3>
+					@foreach (BlogTag tag in Model.BlogTags)
+					{
+						<p>@tag.Tag.Name</p>
+					}
+				</div>
+
+				<hr />
+				<h2>Description</h2>
+				<p>@Model.Description</p>
+			</div>
+		</div>
+		
+
+
+
+
+	</div>
+</div>
