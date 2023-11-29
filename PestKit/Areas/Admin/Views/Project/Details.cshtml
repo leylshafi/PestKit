@@ -1,0 +1,16 @@
+﻿@model Project
+<div class="container">
+    <h1>@Model.Name</h1>
+    <img style="width:200px" src="~/assets/img/@Model.ProjectImages.FirstOrDefault(pi=>pi.IsPrimary==true).Url" alt="@Model.ProjectImages.FirstOrDefault(pi=>pi.IsPrimary==true).Alternative" />
+
+
+    <div class="d-flex flex-wrap">
+        @foreach (ProjectImage pi in Model.ProjectImages.Where(p => p.IsPrimary == false))
+        {
+            <div class="m-1">
+                <img src="~/assets/img/@pi.Url" alt="@pi.Alternative">
+            </div>
+        }
+    </div>
+</div>
+
