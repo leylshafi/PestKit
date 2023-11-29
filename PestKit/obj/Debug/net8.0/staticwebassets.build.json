@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "8WD8sYHxHsXET/gubxp9bbcuiu+4dhgtuS5XgrCmzW8=",
+  "Hash": "MUpArojbkjshaDItNvI5UtSpHlfxNrN6M5xaq+0oBZA=",
   "Source": "PestKit",
   "BasePath": "_content/PestKit",
   "Mode": "Default",
@@ -1860,6 +1860,25 @@
       "OriginalItemSpec": "wwwroot\\assets\\img\\81555ba0-3496-4758-8d2d-23bfcf1524ca.jpg"
     },
     {
+      "Identity": "C:\\Users\\ca.r214.09\\Desktop\\PestKit\\PestKit\\wwwroot\\assets\\img\\96734464-5834-4e51-9f13-7afacdf4abfa.jpg",
+      "SourceId": "PestKit",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ca.r214.09\\Desktop\\PestKit\\PestKit\\wwwroot\\",
+      "BasePath": "_content/PestKit",
+      "RelativePath": "assets/img/96734464-5834-4e51-9f13-7afacdf4abfa.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\96734464-5834-4e51-9f13-7afacdf4abfa.jpg"
+    },
+    {
       "Identity": "C:\\Users\\ca.r214.09\\Desktop\\PestKit\\PestKit\\wwwroot\\assets\\img\\9889e6ee-1d65-428b-9479-3eb7d20a70d5.jpg",
       "SourceId": "PestKit",
       "SourceType": "Discovered",
@@ -1991,6 +2010,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\img\\b31bacbf-9718-4f3e-ae25-6ba9da45565b.png"
+    },
+    {
+      "Identity": "C:\\Users\\ca.r214.09\\Desktop\\PestKit\\PestKit\\wwwroot\\assets\\img\\be641489-4dbe-446e-82d6-f26c7e6272c4.jpg",
+      "SourceId": "PestKit",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ca.r214.09\\Desktop\\PestKit\\PestKit\\wwwroot\\",
+      "BasePath": "_content/PestKit",
+      "RelativePath": "assets/img/be641489-4dbe-446e-82d6-f26c7e6272c4.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\img\\be641489-4dbe-446e-82d6-f26c7e6272c4.jpg"
     },
     {
       "Identity": "C:\\Users\\ca.r214.09\\Desktop\\PestKit\\PestKit\\wwwroot\\assets\\img\\blog-1.jpg",
