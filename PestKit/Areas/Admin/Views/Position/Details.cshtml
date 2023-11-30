@@ -1,8 +1,8 @@
-﻿@model Author
+﻿@model Position
 <div class="container">
 	<h1>@Model.Name</h1>
 	<div class="d-flex flex-wrap">
-		@foreach (Blog blog in Model.Blogs)
+		@* @foreach (Employee employee in Model.Employees)
 		{
 			<div class="card m-1" style="width: 18rem;">
 				<img src="~/assets/img/@blog?.ImageUrl" class="card-img-top" alt="...">
@@ -11,6 +11,6 @@
 					<p class="card-text">@blog.Description</p>
 				</div>
 			</div>
-		}
+		} *@
 	</div>
 </div>

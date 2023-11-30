@@ -333,6 +333,10 @@
       "PackagePath": "staticwebassets\\assets\\img\\02ea52ca-2078-42ca-a0b7-e560db957421.jpg"
     },
     {
+      "Id": "C:\\Users\\ca.r214.09\\Desktop\\PestKit\\PestKit\\wwwroot\\assets\\img\\0aca77ae-bebc-4ad1-9366-b6c0a733725e.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\0aca77ae-bebc-4ad1-9366-b6c0a733725e.jpg"
+    },
+    {
       "Id": "C:\\Users\\ca.r214.09\\Desktop\\PestKit\\PestKit\\wwwroot\\assets\\img\\13eacfe4-9db7-4d4d-91a8-34eb0be69b70.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\13eacfe4-9db7-4d4d-91a8-34eb0be69b70.jpg"
     },
@@ -345,14 +349,6 @@
       "PackagePath": "staticwebassets\\assets\\img\\33ee8478-7c3a-462c-aa6d-0c826761b3dc.png"
     },
     {
-      "Id": "C:\\Users\\ca.r214.09\\Desktop\\PestKit\\PestKit\\wwwroot\\assets\\img\\34f397b4-fa56-494e-8084-09df6b52c76b.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\34f397b4-fa56-494e-8084-09df6b52c76b.jpg"
-    },
-    {
-      "Id": "C:\\Users\\ca.r214.09\\Desktop\\PestKit\\PestKit\\wwwroot\\assets\\img\\3ac65e8e-7cf3-4372-bcd2-a5e5de87ac07.png",
-      "PackagePath": "staticwebassets\\assets\\img\\3ac65e8e-7cf3-4372-bcd2-a5e5de87ac07.png"
-    },
-    {
       "Id": "C:\\Users\\ca.r214.09\\Desktop\\PestKit\\PestKit\\wwwroot\\assets\\img\\404bb0b8-043a-4efa-a918-f6b1eff2c292.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\404bb0b8-043a-4efa-a918-f6b1eff2c292.jpg"
     },
@@ -361,36 +357,16 @@
       "PackagePath": "staticwebassets\\assets\\img\\40f53de2-463f-4d10-8356-3ba433ea0234.png"
     },
     {
-      "Id": "C:\\Users\\ca.r214.09\\Desktop\\PestKit\\PestKit\\wwwroot\\assets\\img\\4f0b2c6b-3f50-4028-99df-2803487795c5.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\4f0b2c6b-3f50-4028-99df-2803487795c5.jpg"
-    },
-    {
-      "Id": "C:\\Users\\ca.r214.09\\Desktop\\PestKit\\PestKit\\wwwroot\\assets\\img\\63c96c61-b89d-4586-9350-889183bd6989.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\63c96c61-b89d-4586-9350-889183bd6989.jpg"
-    },
-    {
       "Id": "C:\\Users\\ca.r214.09\\Desktop\\PestKit\\PestKit\\wwwroot\\assets\\img\\6ae60d5a-223c-4d52-9d59-215b0af8ffe9.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\6ae60d5a-223c-4d52-9d59-215b0af8ffe9.jpg"
-    },
-    {
-      "Id": "C:\\Users\\ca.r214.09\\Desktop\\PestKit\\PestKit\\wwwroot\\assets\\img\\81555ba0-3496-4758-8d2d-23bfcf1524ca.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\81555ba0-3496-4758-8d2d-23bfcf1524ca.jpg"
     },
     {
       "Id": "C:\\Users\\ca.r214.09\\Desktop\\PestKit\\PestKit\\wwwroot\\assets\\img\\96734464-5834-4e51-9f13-7afacdf4abfa.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\96734464-5834-4e51-9f13-7afacdf4abfa.jpg"
     },
     {
-      "Id": "C:\\Users\\ca.r214.09\\Desktop\\PestKit\\PestKit\\wwwroot\\assets\\img\\9889e6ee-1d65-428b-9479-3eb7d20a70d5.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\9889e6ee-1d65-428b-9479-3eb7d20a70d5.jpg"
-    },
-    {
       "Id": "C:\\Users\\ca.r214.09\\Desktop\\PestKit\\PestKit\\wwwroot\\assets\\img\\9929741b-39b5-410e-8636-3c4b2a2425f1.png",
       "PackagePath": "staticwebassets\\assets\\img\\9929741b-39b5-410e-8636-3c4b2a2425f1.png"
-    },
-    {
-      "Id": "C:\\Users\\ca.r214.09\\Desktop\\PestKit\\PestKit\\wwwroot\\assets\\img\\9d085e9f-4182-4f26-9c4f-1adc8bb22863.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\9d085e9f-4182-4f26-9c4f-1adc8bb22863.jpg"
     },
     {
       "Id": "C:\\Users\\ca.r214.09\\Desktop\\PestKit\\PestKit\\wwwroot\\assets\\img\\about-img.jpg",
@@ -407,10 +383,6 @@
     {
       "Id": "C:\\Users\\ca.r214.09\\Desktop\\PestKit\\PestKit\\wwwroot\\assets\\img\\b31bacbf-9718-4f3e-ae25-6ba9da45565b.png",
       "PackagePath": "staticwebassets\\assets\\img\\b31bacbf-9718-4f3e-ae25-6ba9da45565b.png"
-    },
-    {
-      "Id": "C:\\Users\\ca.r214.09\\Desktop\\PestKit\\PestKit\\wwwroot\\assets\\img\\be641489-4dbe-446e-82d6-f26c7e6272c4.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\be641489-4dbe-446e-82d6-f26c7e6272c4.jpg"
     },
     {
       "Id": "C:\\Users\\ca.r214.09\\Desktop\\PestKit\\PestKit\\wwwroot\\assets\\img\\blog-1.jpg",
@@ -437,12 +409,20 @@
       "PackagePath": "staticwebassets\\assets\\img\\carousel-2.jpg"
     },
     {
+      "Id": "C:\\Users\\ca.r214.09\\Desktop\\PestKit\\PestKit\\wwwroot\\assets\\img\\d90eb599-ef31-41a5-9be1-f87ae057dd06.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\d90eb599-ef31-41a5-9be1-f87ae057dd06.jpg"
+    },
+    {
       "Id": "C:\\Users\\ca.r214.09\\Desktop\\PestKit\\PestKit\\wwwroot\\assets\\img\\e64c548d-ddee-4785-8d08-00f734aa8aea.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\e64c548d-ddee-4785-8d08-00f734aa8aea.jpg"
     },
     {
       "Id": "C:\\Users\\ca.r214.09\\Desktop\\PestKit\\PestKit\\wwwroot\\assets\\img\\eb1705b3-8619-46c9-976b-24e732d8a43a.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\eb1705b3-8619-46c9-976b-24e732d8a43a.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ca.r214.09\\Desktop\\PestKit\\PestKit\\wwwroot\\assets\\img\\f759eb8a-f108-4388-994d-b988bc809fb9.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\f759eb8a-f108-4388-994d-b988bc809fb9.jpg"
     },
     {
       "Id": "C:\\Users\\ca.r214.09\\Desktop\\PestKit\\PestKit\\wwwroot\\assets\\img\\project-1.jpg",

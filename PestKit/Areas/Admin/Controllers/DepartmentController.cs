@@ -44,7 +44,13 @@ namespace PestKit.Areas.Admin.Controllers
 				ModelState.AddModelError("Photo", "It shouldn't exceed 2 mb");
 				return View();
 			}
-			var department = new Department
+            bool result = _context.Departments.Any(c => c.Name == departmentVM.Name);
+            if (result)
+            {
+                ModelState.AddModelError("Name", "There is already such department");
+                return View();
+            }
+            var department = new Department
 			{
 				Name = departmentVM.Name,
 				ImageUrl = await departmentVM.Photo.CreateFile(_env.WebRootPath, "assets", "img"),
@@ -102,6 +108,25 @@ namespace PestKit.Areas.Admin.Controllers
 
 			await _context.SaveChangesAsync();
 			return RedirectToAction(nameof(Index));
+		}
+
+		public async Task<IActionResult> Delete(int id)
+		{
+			if(id<=0) return BadRequest();
+			var existed = await _context.Departments.FirstOrDefaultAsync(d=>d.Id== id);
+			if (existed is null) return NotFound();
+			_context.Departments.Remove(existed);
+			await _context.SaveChangesAsync();
+			return RedirectToAction(nameof(Index));
+		}
+
+		public async Task<IActionResult> Details(int id)
+		{
+			if (id <= 0) return BadRequest();
+			var existed = await _context.Departments.FirstOrDefaultAsync(d => d.Id == id);
+			if (existed is null) return NotFound();
+			return View(existed);
+
 		}
 	}
 }
