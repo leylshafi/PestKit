@@ -123,7 +123,7 @@ namespace PestKit.Areas.Admin.Controllers
 		public async Task<IActionResult> Details(int id)
 		{
 			if (id <= 0) return BadRequest();
-			var existed = await _context.Departments.FirstOrDefaultAsync(d => d.Id == id);
+			var existed = await _context.Departments.Include(d=>d.Employees).FirstOrDefaultAsync(d => d.Id == id);
 			if (existed is null) return NotFound();
 			return View(existed);
 

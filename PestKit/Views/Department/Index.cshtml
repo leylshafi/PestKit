@@ -1,0 +1,42 @@
+﻿@model List<Department>
+<!-- Page Header Start -->
+<div class="container-fluid page-header py-5">
+    <div class="container text-center py-5">
+        <h1 class="display-2 text-white mb-4 animated slideInDown">Our Departments</h1>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb justify-content-center mb-0 animated slideInDown">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                <li class="breadcrumb-item text-white" aria-current="page">Our Departments</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<!-- Page Header End -->
+<!-- Team Start -->
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="text-center mb-5 wow fadeInUp" data-wow-delay=".3s">
+            <h5 class="mb-2 px-3 py-1 text-dark rounded-pill d-inline-block border border-2 border-primary">Our Workplace</h5>
+            <h1 class="display-5 w-50 mx-auto">Our Departments</h1>
+        </div>
+        <div class="row g-5">
+            @foreach (Department department in Model)
+            {
+                <div class="col-xxl-3 col-lg-6 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay=".3s">
+                    <div class="rounded team-item">
+                        <a href="#">
+                            <img src="~/assets/img/@department.ImageUrl" class="img-fluid w-100 rounded-top border border-bottom-0" alt="@department.Name">
+                            <div class="team-content bg-primary text-dark text-center py-3">
+                                <span class="fs-4 fw-bold">@department.Name</span>
+                                <p class="text-muted mb-0"></p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            }
+            
+        </div>
+    </div>
+</div>
+<!-- Team End -->

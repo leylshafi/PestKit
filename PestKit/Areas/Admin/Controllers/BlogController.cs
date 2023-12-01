@@ -108,27 +108,34 @@ namespace PestKit.Areas.Admin.Controllers
 		[HttpPost]
 		public async Task<IActionResult> Update(int id, UpdateBlogVM vm)
 		{
-			if (!ModelState.IsValid)
+            Blog existed = await _context.Blogs
+               .Include(b => b.BlogTags)
+               .Include(b => b.Author)
+               .FirstOrDefaultAsync(b => b.Id == id);
+
+            if (!ModelState.IsValid)
 			{
 				vm.Authors = await _context.Authors.ToListAsync();
 				vm.Tags = await _context.Tags.ToListAsync();
-				return View(vm);
+				return View(vm); 
 			}
-			if (!vm.Photo.ValidateType())
+			if(vm.Photo is not null)
 			{
-				ModelState.AddModelError("Photo", "Wrong file type");
-				return View();
-			}
-			if (!vm.Photo.ValidateSize(2 * 1024))
-			{
-				ModelState.AddModelError("Photo", "It shouldn't exceed 2 mb");
-				return View();
-			}
+                if (!vm.Photo.ValidateType())
+                {
+                    ModelState.AddModelError("Photo", "Wrong file type");
+                    return View();
+                }
+                if (!vm.Photo.ValidateSize(2 * 1024))
+                {
+                    ModelState.AddModelError("Photo", "It shouldn't exceed 2 mb");
+                    return View();
+                }
 
-			Blog existed = await _context.Blogs
-				.Include(b=>b.BlogTags)
-				.Include(b=>b.Author)
-				.FirstOrDefaultAsync(b => b.Id == id);
+                existed.ImageUrl = await vm.Photo.CreateFile(_env.WebRootPath, "assets", "img");
+            }
+
+           
 
 			if(existed == null) return NotFound();
 			bool result = await _context.Blogs.AnyAsync(c => c.AuthorId == vm.AuthorId);
@@ -167,7 +174,7 @@ namespace PestKit.Areas.Admin.Controllers
 
 			existed.Name = vm.Name;
 			existed.Description = vm.Description;
-			existed.ImageUrl = await vm.Photo.CreateFile(_env.WebRootPath, "assets", "img");
+			
 			existed.AuthorId = vm.AuthorId;
 			await _context.SaveChangesAsync();
 			return RedirectToAction(nameof(Index));

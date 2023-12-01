@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Razor.TagHelpers;
 using Microsoft.EntityFrameworkCore;
 using PestKit.Data;
 
@@ -16,7 +15,10 @@ namespace PestKit.Controllers
 
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Blogs.ToListAsync());
+            var blogs= await _context.Blogs
+                .Include(b=>b.Author)
+                .ToListAsync();
+            return View(blogs);
         }
     }
 }

@@ -91,7 +91,7 @@ namespace PestKit.Areas.Admin.Controllers
 		public async Task<IActionResult> Details(int id)
 		{
             if (id <= 0) return BadRequest();
-            var existed = await _context.Positions.FirstOrDefaultAsync(p => p.Id == id);
+            var existed = await _context.Positions.Include(p=>p.Employees).FirstOrDefaultAsync(p => p.Id == id);
             if (existed is null) return NotFound();
 			return View(existed);
         }
