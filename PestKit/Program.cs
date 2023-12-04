@@ -1,12 +1,14 @@
 using Microsoft.EntityFrameworkCore;
 using PestKit.Data;
+using PestKit.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<AppDbContext>(o => o.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
-
+builder.Services.AddSingleton<IHttpContextAccessor,HttpContextAccessor>();
+builder.Services.AddScoped<LayoutService>();
 var app = builder.Build();
 
 app.UseStaticFiles();

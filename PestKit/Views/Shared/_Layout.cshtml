@@ -1,4 +1,12 @@
-﻿<!DOCTYPE html>
+﻿@using PestKit.Services
+@using PestKit.ViewModels
+
+@inject LayoutService service
+@{
+    List<BasketItemVM> basket = await service.InvokeAsync();
+    decimal total = 0;
+}
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -27,6 +35,255 @@
 
     <!-- Template Stylesheet -->
     <link href="~/assets/css/style.css" rel="stylesheet">
+    <style>
+        .shoping-cart {
+            padding-top: 80px;
+            padding-bottom: 80px;
+        }
+
+        .spad {
+            padding-top: 100px;
+            padding-bottom: 100px;
+        }
+
+        .shoping__cart__table {
+            margin-bottom: 30px;
+        }
+
+            .shoping__cart__table table {
+                width: 100%;
+                text-align: center;
+            }
+
+                .shoping__cart__table table thead tr {
+                    border-bottom: 1px solid #ebebeb;
+                }
+
+                .shoping__cart__table table thead th {
+                    font-size: 20px;
+                    font-weight: 700;
+                    color: #1c1c1c;
+                    padding-bottom: 20px;
+                }
+
+                    .shoping__cart__table table thead th.shoping__product {
+                        text-align: left;
+                    }
+
+                .shoping__cart__table table tbody tr td {
+                    padding-top: 30px;
+                    padding-bottom: 30px;
+                    border-bottom: 1px solid #ebebeb;
+                }
+
+                    .shoping__cart__table table tbody tr td.shoping__cart__item {
+                        width: 630px;
+                        text-align: left;
+                    }
+
+                        .shoping__cart__table table tbody tr td.shoping__cart__item img {
+                            display: inline-block;
+                            margin-right: 25px;
+                        }
+
+                        .shoping__cart__table table tbody tr td.shoping__cart__item h5 {
+                            color: #1c1c1c;
+                            display: inline-block;
+                        }
+
+                    .shoping__cart__table table tbody tr td.shoping__cart__price {
+                        font-size: 18px;
+                        color: #1c1c1c;
+                        font-weight: 700;
+                        width: 100px;
+                    }
+
+                    .shoping__cart__table table tbody tr td.shoping__cart__total {
+                        font-size: 18px;
+                        color: #1c1c1c;
+                        font-weight: 700;
+                        width: 110px;
+                    }
+
+                    .shoping__cart__table table tbody tr td.shoping__cart__item__close {
+                        text-align: right;
+                    }
+
+                        .shoping__cart__table table tbody tr td.shoping__cart__item__close span {
+                            font-size: 24px;
+                            color: #b2b2b2;
+                            cursor: pointer;
+                        }
+
+                    .shoping__cart__table table tbody tr td.shoping__cart__quantity {
+                        width: 225px;
+                    }
+
+                        .shoping__cart__table table tbody tr td.shoping__cart__quantity .pro-qty {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+
+                            .shoping__cart__table table tbody tr td.shoping__cart__quantity .pro-qty input {
+                                color: #1c1c1c;
+                                width: 50px;
+                            }
+
+                                .shoping__cart__table table tbody tr td.shoping__cart__quantity .pro-qty input::placeholder {
+                                    color: #1c1c1c;
+                                }
+
+                            .shoping__cart__table table tbody tr td.shoping__cart__quantity .pro-qty .qtybtn {
+                                width: 30px;
+                                height: 30px;
+                                border-radius: 3px;
+                                background-color: #fdf001;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                cursor: pointer;
+                                user-select: none;
+                            }
+
+                                .shoping__cart__table table tbody tr td.shoping__cart__quantity .pro-qty .qtybtn:hover {
+                                    opacity: .7;
+                                }
+
+        .primary-btn.cart-btn {
+            color: #6f6f6f;
+            padding: 14px 30px 12px;
+            background: #f5f5f5;
+        }
+
+            .primary-btn.cart-btn span {
+                font-size: 14px;
+            }
+
+            .primary-btn.cart-btn.cart-btn-right {
+                float: right;
+            }
+
+        .shoping__discount {
+            margin-top: 45px;
+        }
+
+            .shoping__discount h5 {
+                font-size: 20px;
+                color: #1c1c1c;
+                font-weight: 700;
+                margin-bottom: 25px;
+            }
+
+            .shoping__discount form input {
+                width: 255px;
+                height: 46px;
+                border: 1px solid #cccccc;
+                font-size: 16px;
+                color: #b2b2b2;
+                text-align: center;
+                display: inline-block;
+                margin-right: 15px;
+            }
+
+                .shoping__discount form input::placeholder {
+                    color: #b2b2b2;
+                }
+
+            .shoping__discount form button {
+                padding: 15px 30px 11px;
+                font-size: 12px;
+                letter-spacing: 4px;
+                background: #6f6f6f;
+            }
+
+        .shoping__checkout {
+            background: #f5f5f5;
+            padding: 30px;
+            padding-top: 20px;
+            margin-top: 50px;
+        }
+
+            .shoping__checkout h5 {
+                color: #1c1c1c;
+                font-weight: 700;
+                font-size: 20px;
+                margin-bottom: 28px;
+            }
+
+            .shoping__checkout ul {
+                margin-bottom: 28px;
+            }
+
+                .shoping__checkout ul li {
+                    font-size: 16px;
+                    color: #1c1c1c;
+                    font-weight: 700;
+                    list-style: none;
+                    overflow: hidden;
+                    border-bottom: 1px solid #ebebeb;
+                    padding-bottom: 13px;
+                    margin-bottom: 18px;
+                }
+
+                    .shoping__checkout ul li:last-child {
+                        padding-bottom: 0;
+                        border-bottom: none;
+                        margin-bottom: 0;
+                    }
+
+                    .shoping__checkout ul li span {
+                        font-size: 18px;
+                        color: #dd2222;
+                        float: right;
+                    }
+
+            .shoping__checkout .primary-btn {
+                display: block;
+                text-align: center;
+            }
+
+        .minicart-btn {
+            position: relative;
+        }
+
+            .minicart-btn .quantity {
+                background-color: red;
+                border-radius: 100%;
+                text-align: center;
+                font-size: 14px;
+                color: #ffffff;
+                display: block;
+                width: 20px;
+                height: 20px;
+                line-height: 20px;
+                position: absolute;
+                top: -5px;
+                right: 0;
+            }
+
+        .cart_product {
+            border-bottom: 1px solid grey;
+            padding: 10px 0;
+            list-style-type: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+            .cart_product p {
+                margin: 0;
+            }
+
+            .cart_product button {
+                border: none;
+                border-radius: 5px;
+            }
+
+                .cart_product button:hover {
+                    opacity: .7;
+                }
+    </style>
 </head>
 
 <body>
@@ -66,14 +323,42 @@
         </div>
     </div>
     <!-- Topbar End -->
+    <!-- Cart Offcanvas Start -->
+    <div class="offcanvas offcanvas-end" id="minicart">
+        <div class="offcanvas-header">
+            <h1 class="offcanvas-title">Cart</h1>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul>
+                @foreach (BasketItemVM item in basket)
+                {
+                    total += item.SubTotal;
+                    <li class="cart_product">
+                        <div>
+                            <p>@item.Name</p>
+                            <p>@item.Count x $@item.Price</p>
+                        </div>
+
+                        <a asp-controller="Basket" asp-action="DeleteBasket" asp-route-id="@item.Id" asp-route-count="1"  class="text-danger"><i class="fas fa-trash fa-fw"></i></a>
+                    </li>
+                }
+            </ul>
+            <p>Total: $@total</p>
+        </div>
+    </div>
+    <!-- Cart Offcanvas End -->
     <!-- Navbar Start -->
     <div class="container-fluid bg-dark">
         <div class="container">
             <nav class="navbar navbar-dark navbar-expand-lg py-lg-0">
                 <a href="index.html" class="navbar-brand">
-                    <h1 class="text-primary mb-0 display-5">Pest<span class="text-white">Kit</span><i class="fa fa-spider text-primary ms-2"></i></h1>
+                    <h1 class="text-primary mb-0 display-5">
+                        Pest<span class="text-white">Kit</span><i class="fa fa-spider text-primary ms-2"></i>
+                    </h1>
                 </a>
-                <button class="navbar-toggler bg-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <button class="navbar-toggler bg-primary" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarCollapse">
                     <span class="fa fa-bars text-dark"></span>
                 </button>
                 <div class="collapse navbar-collapse me-n3" id="navbarCollapse">
@@ -93,6 +378,11 @@
                             </div>
                         </div>
                         <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <a href="javascript:;" class="nav-item nav-link minicart-btn toolbar-btn"
+                           data-bs-toggle="offcanvas" data-bs-target="#minicart">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="quantity">@basket.Count</span>
+                        </a>
                     </div>
                 </div>
             </nav>
@@ -184,6 +474,29 @@
 
     <!-- Template Javascript -->
     <script src="~/assets/js/main.js"></script>
+    <script>
+        /*-------------------
+        Quantity change
+        --------------------- */
+        var proQty = $('.pro-qty');
+        // proQty.prepend('<span class="dec qtybtn">-</span>');
+        // proQty.append('<span class="inc qtybtn">+</span>');
+        proQty.on('click', '.qtybtn', function () {
+            var $button = $(this);
+            var oldValue = $button.parent().find('input').val();
+            if ($button.hasClass('inc')) {
+                var newVal = parseFloat(oldValue) + 1;
+            } else {
+                // Don't allow decrementing below zero
+                if (oldValue > 0) {
+                    var newVal = parseFloat(oldValue) - 1;
+                } else {
+                    newVal = 0;
+                }
+            }
+            $button.parent().find('input').val(newVal);
+        });
+    </script>
 </body>
 
 </html>
