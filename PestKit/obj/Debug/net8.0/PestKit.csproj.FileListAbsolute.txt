@@ -507,3 +507,4 @@ C:\Users\ca.r214.09\Desktop\PestKit\PestKit\obj\Debug\net8.0\scopedcss\projectbu
 C:\Users\ca.r214.09\Desktop\PestKit\PestKit\obj\Debug\net8.0\PestKit.csproj.CopyComplete
 C:\Users\ca.r214.09\Desktop\PestKit\PestKit\obj\Debug\net8.0\PestKit.genruntimeconfig.cache
 C:\Users\ca.r214.09\Desktop\PestKit\PestKit\obj\Debug\net8.0\ref\PestKit.dll
+C:\Users\ca.r214.09\Desktop\PestKit\PestKit\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll

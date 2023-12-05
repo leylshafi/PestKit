@@ -1,0 +1,80 @@
+﻿@using PestKit.Enumerations
+@using PestKit.ViewModels
+ @model RegisterVM
+<!-- Page Header Start -->
+<div class="container-fluid page-header py-5">
+    <div class="container text-center py-5">
+        <h1 class="display-2 text-white mb-4 animated slideInDown">Register</h1>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb justify-content-center mb-0 animated slideInDown">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                <li class="breadcrumb-item text-white" aria-current="page">Register</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<!-- Page Header End -->
+<!-- Register Start -->
+<div class="container-fluid py-5">
+    <div class="container">
+        <div class="row">
+            <form method="post">
+                <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+                <div class="col-4 offset-4">
+                    <div class="mb-3">
+                        <label asp-for="Name" class="form-label">Name</label>
+                        <input asp-for="Name" class="form-control">
+                        <span class="text-danger" asp-validation-for="Name"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Surname" class="form-label">Surname</label>
+                        <input asp-for="Surname" class="form-control">
+                        <span class="text-danger" asp-validation-for="Surname"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Gender">Gender</label>
+                        @foreach (var c in System.Enum.GetValues(typeof(Gender)))
+                        {
+                            <div class="form-check">
+                                <div class="d-flex justify-content-between">
+                                    <label asp-for="Gender" class="form-check-label">
+                                        @c
+                                    </label>
+                                    <input asp-for="Gender" value="@((int)c)" type="radio">
+                                </div>
+
+                                <span class="text-danger" asp-validation-for="Gender"></span>
+                            </div>
+
+                        }
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Email" class="form-label">Email</label>
+                        <input asp-for="Email" class="form-control">
+                        <span class="text-danger" asp-validation-for="Email"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Username" class="form-label">Username</label>
+                        <input asp-for="Username" class="form-control">
+                        <span class="text-danger" asp-validation-for="Username"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Password" class="form-label">Password</label>
+                        <input asp-for="Password" class="form-control">
+                        <span class="text-danger" asp-validation-for="Password"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="ConfirmPassword" class="form-label">ConfirmPassword</label>
+                        <input asp-for="ConfirmPassword" class="form-control">
+                        <span class="text-danger" asp-validation-for="ConfirmPassword"></span>
+                    </div>
+                    <div class="mb-3">
+                        <button type="submit" class="btn btn-warning w-100">Register</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Register End -->
