@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PestKit.Areas.Admin.ViewModels;
 using PestKit.Data;
@@ -15,13 +16,13 @@ namespace PestKit.Areas.Admin.Controllers
 		{
 			_context = context;
 		}
-
+		[Authorize(Roles = "Admin,Moderator")]
 		public async Task<IActionResult> Index()
 		{
 			var positions = await _context.Positions.Include(p=>p.Employees).ToListAsync();
 			return View(positions);
 		}
-
+		[Authorize(Roles = "Admin,Moderator")]
 		public IActionResult Create()
 		{
 			return View();
@@ -45,7 +46,7 @@ namespace PestKit.Areas.Admin.Controllers
 			await _context.SaveChangesAsync();
 			return RedirectToAction(nameof(Index));
         }
-
+		[Authorize(Roles = "Admin,Moderator")]
 		public async Task<IActionResult> Update(int id)
 		{
 			if (id <= 0) return BadRequest();
@@ -77,7 +78,7 @@ namespace PestKit.Areas.Admin.Controllers
 			return RedirectToAction(nameof(Index));
 
         }
-
+		[Authorize(Roles = "Admin")]
 		public async Task<IActionResult> Delete(int id)
 		{
             if (id <= 0) return BadRequest();
@@ -87,7 +88,7 @@ namespace PestKit.Areas.Admin.Controllers
 			await _context.SaveChangesAsync();
 			return RedirectToAction(nameof(Index));
         }
-
+		[Authorize(Roles = "Admin,Moderator")]
 		public async Task<IActionResult> Details(int id)
 		{
             if (id <= 0) return BadRequest();

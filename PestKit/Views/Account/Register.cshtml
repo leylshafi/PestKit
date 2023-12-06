@@ -19,9 +19,14 @@
 <div class="container-fluid py-5">
     <div class="container">
         <div class="row">
-            <form method="post">
+            <form method="post" enctype="multipart/form-data">
                 <div class="text-danger" asp-validation-summary="ModelOnly"></div>
                 <div class="col-4 offset-4">
+                    <div class="form-group">
+                        <label asp-for="ProfilePhoto">Photo</label>
+                        <input asp-for="ProfilePhoto" class="form-control" placeholder="Photo">
+                        <span class="text-danger" asp-validation-for="ProfilePhoto"></span>
+                    </div>
                     <div class="mb-3">
                         <label asp-for="Name" class="form-label">Name</label>
                         <input asp-for="Name" class="form-control">

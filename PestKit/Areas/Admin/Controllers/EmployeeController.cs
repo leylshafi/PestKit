@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PestKit.Areas.Admin.ViewModels;
 using PestKit.Data;
@@ -18,8 +19,8 @@ namespace PestKit.Areas.Admin.Controllers
             _context = context;
             _env = env;
         }
-
-        public async Task<IActionResult> Index()
+		[Authorize(Roles = "Admin,Moderator")]
+		public async Task<IActionResult> Index()
         {
             var employees = await _context.Employees
                 .Include(e => e.Department)
@@ -27,8 +28,8 @@ namespace PestKit.Areas.Admin.Controllers
                 .ToListAsync();
             return View(employees);
         }
-
-        public async Task<IActionResult> Create()
+		[Authorize(Roles = "Admin,Moderator")]
+		public async Task<IActionResult> Create()
         {
             var vm = new CreateEmployeeVM
             {
@@ -104,8 +105,8 @@ namespace PestKit.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
 
         }
-
-        public async Task<IActionResult> Update(int id)
+		[Authorize(Roles = "Admin,Moderator")]
+		public async Task<IActionResult> Update(int id)
         {
             if (id <= 0) return BadRequest();
             var existed = await _context.Employees.FirstOrDefaultAsync(x => x.Id == id);
@@ -197,8 +198,8 @@ namespace PestKit.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
 
         }
-
-        public async Task<IActionResult> Delete(int id)
+		[Authorize(Roles = "Admin")]
+		public async Task<IActionResult> Delete(int id)
         {
             if (id <= 0) return BadRequest();
             var existed =  await _context.Employees.FirstOrDefaultAsync(x=>x.Id == id);
@@ -208,8 +209,8 @@ namespace PestKit.Areas.Admin.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-
-        public async Task<IActionResult> Details(int id)
+		[Authorize(Roles = "Admin,Moderator")]
+		public async Task<IActionResult> Details(int id)
         {
             if (id <= 0) return BadRequest();
             var existed = await _context.Employees

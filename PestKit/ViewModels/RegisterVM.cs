@@ -5,6 +5,7 @@ namespace PestKit.ViewModels
 {
     public class RegisterVM
     {
+        public IFormFile? ProfilePhoto { get; set; }
         [Required]
         public string Name { get; set; }
         public string Surname { get; set; }

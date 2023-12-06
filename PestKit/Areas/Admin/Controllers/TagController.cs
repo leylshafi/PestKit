@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PestKit.Areas.Admin.ViewModels;
 using PestKit.Data;
@@ -15,13 +16,14 @@ namespace PestKit.Areas.Admin.Controllers
 		{
 			_context = context;
 		}
-
+		[Authorize(Roles = "Admin,Moderator")]
 		public async Task<IActionResult> Index()
 		{
 			var tags = await _context.Tags.ToListAsync();
 			return View(tags);
 		}
-        public IActionResult Create()
+		[Authorize(Roles = "Admin,Moderator")]
+		public IActionResult Create()
         {
             return View();
         }
@@ -46,8 +48,8 @@ namespace PestKit.Areas.Admin.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-
-        public async Task<IActionResult> Update(int id)
+		[Authorize(Roles = "Admin,Moderator")]
+		public async Task<IActionResult> Update(int id)
         {
             if (id <= 0) return BadRequest();
             var existed =  await _context.Tags.FirstOrDefaultAsync(c => c.Id == id);
@@ -78,8 +80,8 @@ namespace PestKit.Areas.Admin.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-
-        public async Task<IActionResult> Delete(int id)
+		[Authorize(Roles = "Admin")]
+		public async Task<IActionResult> Delete(int id)
         {
             var existed = await _context.Tags.FirstOrDefaultAsync(c => c.Id == id);
             if (existed == null) return NotFound();
@@ -87,8 +89,8 @@ namespace PestKit.Areas.Admin.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-
-        public async Task<IActionResult>Details(int id)
+		[Authorize(Roles = "Admin,Moderator")]
+		public async Task<IActionResult>Details(int id)
         {
             if (id <= 0) return BadRequest();
 			var existed = await _context.Tags.
