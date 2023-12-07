@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PestKit")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c3068a0212c3cd72ed4445a574afa1c77f1df9ad")]
 [assembly: System.Reflection.AssemblyProductAttribute("PestKit")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PestKit")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

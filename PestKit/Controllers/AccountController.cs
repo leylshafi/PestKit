@@ -143,10 +143,12 @@ namespace PestKit.Controllers
             var user = _userManager.Users.FirstOrDefault(u => User.Identity.Name == u.UserName);
             user.Name = profileVM.Name;
             user.Bio = profileVM.Bio;
-            if(profileVM.ProfilePhoto != null)
+
+            if (profileVM.ProfilePhoto != null)
             {
-                user.ImageUrl = await profileVM.ProfilePhoto.CreateFile(_env.WebRootPath,"assets","img");
+                user.ImageUrl = await profileVM.ProfilePhoto.CreateFile(_env.WebRootPath, "assets", "img");
             }
+            profileVM.ProfileImage = user.ImageUrl;
             user.Birthday = profileVM.Birthday;
             user.Surname = profileVM.Surname;
            
