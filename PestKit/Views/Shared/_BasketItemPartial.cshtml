@@ -1,0 +1,24 @@
+﻿@using PestKit.ViewModels
+@model List<BasketItemVM>
+@{
+    decimal total = 0;
+}
+
+<ul>
+    @foreach (BasketItemVM basketItem in Model)
+    {
+        total += basketItem.SubTotal;
+
+        <li class="cart_product">
+            <div>
+                <p>@basketItem.Name</p>
+                <p>@basketItem.Count x $@basketItem.Price</p>
+            </div>
+            <a asp-action="DeleteBasket" asp-controller="Basket" asp-route-id="@basketItem.Id" class="delete-button text-danger"><i class="fas fa-trash fa-fw remove-from-cart"></i></a>
+        </li>
+    }
+</ul>
+<p>Total: $@total</p> 
+<a asp-action="Index" asp-controller="Basket" class="delete-button text-danger">Basket</i></a>
+
+

@@ -20,13 +20,20 @@ namespace PestKit.Areas.Admin.Controllers
             _env = env;
         }
 		[Authorize(Roles = "Admin,Moderator")]
-		public async Task<IActionResult> Index()
+		public async Task<IActionResult> Index(int page)
         {
-            var employees = await _context.Employees
+            double count = await _context.Employees.CountAsync();
+            var employees = await _context.Employees.Skip(page*2).Take(2)
                 .Include(e => e.Department)
                 .Include(e => e.Position)
                 .ToListAsync();
-            return View(employees);
+            PaginationVM<Employee> pagination = new PaginationVM<Employee>()
+            {
+                CurrentPage = page,
+                TotalPage = Math.Ceiling(count / 2),
+                Items = employees
+            };
+            return View(pagination);
         }
 		[Authorize(Roles = "Admin,Moderator")]
 		public async Task<IActionResult> Create()

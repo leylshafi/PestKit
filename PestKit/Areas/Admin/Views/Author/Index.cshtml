@@ -1,6 +1,6 @@
-﻿@model List<Author>
+﻿@model PaginationVM<Author>
 @{
-    int count = 0;
+    int count = Model.CurrentPage*2;
 }
 <div class="main-panel">
     <div class="content-wrapper">
@@ -31,7 +31,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach (Author author in Model)
+                                @foreach (Author author in Model.Items)
                                 {
                                     count++;
                                     <tr>
@@ -63,6 +63,16 @@
                             </tbody>
                         </table>
                     </div>
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <li class="page-item @(Model.CurrentPage==0?"disabled":"")"><a class="page-link" asp-route-page="@(Model.CurrentPage-1)" asp-action="Index" asp-controller="Author">Previous</a></li>
+                            @for (int i = 0; i < Model.TotalPage; i++)
+                            {
+                                <li class="page-item @(i==Model.CurrentPage?"disabled":"")"><a class="page-link" asp-route-page="@i" asp-action="Index" asp-controller="Author">@(i + 1)</a></li>
+                            }
+                            <li class="page-item @(Model.CurrentPage==Model.TotalPage-1?"disabled":"")"><a class="page-link" asp-route-page="@(Model.CurrentPage+1)" asp-action="Index" asp-controller="Author">Next</a></li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </div>

@@ -31,7 +31,7 @@
                         </div>
                         <h4>@product.Name</h4>
                         <p class="fs-5">$@product.Price</p>
-                        <a asp-action="AddBasket" asp-controller="Basket" asp-route-id="@product.Id" asp-route-controllerName="Product" as class="btn btn-primary border-0 rounded-pill px-4 py-3">Add to cart</a>
+                        <a asp-action="AddBasket" asp-controller="Basket" asp-route-id="@product.Id" as class="btn btn-primary border-0 rounded-pill px-4 py-3 add-to-cart">Add to cart</a>
                     </div>
                 </div>
             }

@@ -15,6 +15,7 @@ namespace PestKit.ViewComponents
         public async Task<IViewComponentResult> InvokeAsync()
         {
             var employees = await _context.Employees.Include(e=>e.Position).ToListAsync();
+            
             return View(employees);
         }
     }

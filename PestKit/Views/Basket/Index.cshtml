@@ -34,48 +34,11 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach (BasketItemVM item in Model)
-                            {
-                                total += item.SubTotal;
-                                <tr>
-                                    <td class="shoping__cart__item">
-                                        <h5>@item.Name</h5>
-                                    </td>
-                                    <td class="shoping__cart__price">
-                                        $@item.Price
-                                    </td>
-                                    <td class="shoping__cart__quantity">
-                                        <div class="quantity">
-                                            <div class="pro-qty">
-                                                <a asp-action="DeleteBasket" asp-route-id="@item.Id">
-                                                    <span class="dec qtybtn">
-                                                        <span>-</span>
-                                                    </span>
-
-                                                </a>
-                                                
-                                                <input type="text" value="@item.Count">
-                                                <a asp-action="AddBasket" asp-route-id="@item.Id" asp-route-controllerName="Basket">
-                                                    <span class="inc qtybtn">
-                                                        <span>+</span>
-                                                    </span>
-                                                </a>
-                                                
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="shoping__cart__total">
-                                        $@item.SubTotal
-                                    </td>
-                                    <td class="shoping__cart__item__close">
-                                        <a asp-action="DeleteBasket" asp-route-id="@item.Id" asp-route-count="1">
-                                            <i class="far fa-trash-alt fa-fw text-danger"></i>
-                                        </a>
-                                       
-                                    </td>
-                                </tr>
-                            }
-                            
+                            <tr id="mainPageBasketPartial" class="cart-item-holder">
+                                @{
+                                    await Html.RenderPartialAsync("_MainPageBasketPartial", Model);
+                                }
+                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -108,7 +71,7 @@
                     <ul>
                         <li>Total <span>$@total</span></li>
                     </ul>
-                    <a href="#" class="primary-btn">PROCEED TO CHECKOUT</a>
+                    <a asp-action="Checkout" asp-controller="Basket" class="primary-btn">PROCEED TO CHECKOUT</a>
                 </div>
             </div>
         </div>

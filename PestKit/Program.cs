@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using PestKit.Data;
+using PestKit.Interfaces;
+using PestKit.Middlewares;
 using PestKit.Models;
 using PestKit.Services;
 
@@ -10,6 +12,7 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<AppDbContext>(o => o.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
 builder.Services.AddSingleton<IHttpContextAccessor,HttpContextAccessor>();
+builder.Services.AddScoped<IEmailService,EmailService>();
 builder.Services.AddScoped<LayoutService>();
 builder.Services.AddIdentity<AppUser, IdentityRole>(options =>
 {
@@ -26,7 +29,7 @@ app.UseRouting();
 app.UseAuthentication();
 
 app.UseAuthorization();
-
+app.UseMiddleware<GlobalExceptionHandlerMiddleware>();
 app.MapControllerRoute(
 	"Default",
 	"{area:exists}/{controller=Home}/{action=Index}/{id?}");

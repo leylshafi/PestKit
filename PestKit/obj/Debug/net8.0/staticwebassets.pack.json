@@ -429,6 +429,10 @@
       "PackagePath": "staticwebassets\\assets\\img\\9cee2aac-321c-4694-9a03-37964d1f5431.jpg"
     },
     {
+      "Id": "C:\\Users\\ca.r214.09\\Desktop\\PestKit\\PestKit\\wwwroot\\assets\\img\\a8a21bdd-0248-4c66-8153-d41bf6c091c6.png",
+      "PackagePath": "staticwebassets\\assets\\img\\a8a21bdd-0248-4c66-8153-d41bf6c091c6.png"
+    },
+    {
       "Id": "C:\\Users\\ca.r214.09\\Desktop\\PestKit\\PestKit\\wwwroot\\assets\\img\\about-img.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\about-img.jpg"
     },
@@ -467,6 +471,10 @@
     {
       "Id": "C:\\Users\\ca.r214.09\\Desktop\\PestKit\\PestKit\\wwwroot\\assets\\img\\blog-3.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\blog-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ca.r214.09\\Desktop\\PestKit\\PestKit\\wwwroot\\assets\\img\\c27c5bdc-4040-4106-808e-99aaaf8513e2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\c27c5bdc-4040-4106-808e-99aaaf8513e2.jpg"
     },
     {
       "Id": "C:\\Users\\ca.r214.09\\Desktop\\PestKit\\PestKit\\wwwroot\\assets\\img\\c5de594c-df56-4dfd-bf39-45b6dec0471e.jpg",
@@ -571,6 +579,10 @@
     {
       "Id": "C:\\Users\\ca.r214.09\\Desktop\\PestKit\\PestKit\\wwwroot\\assets\\img\\testimonial-4.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\testimonial-4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ca.r214.09\\Desktop\\PestKit\\PestKit\\wwwroot\\assets\\js\\custom.js",
+      "PackagePath": "staticwebassets\\assets\\js\\custom.js"
     },
     {
       "Id": "C:\\Users\\ca.r214.09\\Desktop\\PestKit\\PestKit\\wwwroot\\assets\\js\\main.js",

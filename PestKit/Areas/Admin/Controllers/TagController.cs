@@ -17,10 +17,18 @@ namespace PestKit.Areas.Admin.Controllers
 			_context = context;
 		}
 		[Authorize(Roles = "Admin,Moderator")]
-		public async Task<IActionResult> Index()
+		public async Task<IActionResult> Index(int page)
 		{
-			var tags = await _context.Tags.ToListAsync();
-			return View(tags);
+            double count = await _context.Tags.CountAsync();
+			var tags = await _context.Tags.Skip(page*2).Take(2)
+                .ToListAsync();
+            PaginationVM<Tag> pagination = new PaginationVM<Tag>()
+            {
+                CurrentPage = page,
+                TotalPage = Math.Ceiling(count / 2),
+                Items = tags
+            };
+			return View(pagination);
 		}
 		[Authorize(Roles = "Admin,Moderator")]
 		public IActionResult Create()

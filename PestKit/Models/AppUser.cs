@@ -10,5 +10,8 @@ namespace PestKit.Models
         public string? ImageUrl { get; set; } = "avatar.png";
         public string? Bio { get; set; }
         public DateTime? Birthday { get; set; }
+
+        public List<BasketItem> BasketItems { get; set; }
+        public List<Order> Orders { get; set; }
     }
 }
